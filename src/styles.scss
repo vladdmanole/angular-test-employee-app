@@ -1,1 +1,120 @@
 /* You can add global styles to this file, and also import other style files */
+@import "variables";
+
+@font-face {
+  font-family: Acrelec;
+  src: url("assets/fonts/Acrelec.woff2") format("woff2"),
+    url("assets/fonts/Acrelec.woff") format("woff");
+}
+
+@font-face {
+  font-family: Roboto;
+  src: url("assets/fonts/Roboto-Regular.woff") format("woff"),
+    url("assets/fonts/Roboto-Regular.ttf") format("truetype");
+}
+
+* {
+  font-family: "Roboto", Arial, sans-serif;
+}
+
+.full-width {
+  width: 100%;
+}
+
+input[type="text"] {
+  box-sizing: border-box;
+}
+
+// flex classes
+.d-flex {
+  display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.justify-content-space-between {
+  justify-content: space-between;
+}
+
+.justify-content-end {
+  justify-content: flex-end;
+}
+
+.align-items-center {
+  align-items: center;
+}
+//
+
+// forms/buttons
+.form-control {
+  color: #333;
+  box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.1);
+  border: 0;
+  outline: 0;
+  padding: 10px 15px;
+  margin: 0 auto;
+
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  &:hover,
+  &:focus {
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.25);
+  }
+}
+
+.btn {
+  display: inline-block;
+  font-weight: 400;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  border: 1px solid transparent;
+  padding: 6px 12px;
+  border-radius: 4px;
+  user-select: none;
+  outline: 0;
+
+  &:active {
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15), 0 2px 2px rgba(0, 0, 0, 0.35);
+  }
+
+  &[disabled] {
+    cursor: not-allowed;
+    background: #fbfbfc;
+    color: #C4C5C5;
+  }
+}
+
+.btn-delete {
+  background: $warn-color;
+  color: white;
+}
+
+.btn-edit {
+  background: $default-gray;
+}
+
+.btn-info {
+  background: $info-color;
+  color: white;
+}
+
+.btn-success {
+  background-color: $success-color;
+  color: white;
+}
+
+.button-margin {
+  button:not(:last-child) {
+    margin-right: 5px;
+  }
+}
+
+.field-margin {
+  margin-top: 15px;
+}

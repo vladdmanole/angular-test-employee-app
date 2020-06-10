@@ -1,0 +1,39 @@
+/* dialog STYLES
+-------------------------------*/
+app-dialog-confirm {
+  display: none;
+
+  .dialog {
+    position: fixed;
+    top: 33%;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    overflow: auto;
+    width: 80vw;
+    max-width: 600px;
+    margin: 0 auto;
+
+    .dialog-body {
+      padding: 20px;
+      background: #fff;
+      margin: 40px;
+    }
+  }
+
+  .dialog-background {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #000;
+    opacity: 0.75;
+    z-index: 900;
+  }
+}
+
+body.dialog-open {
+  overflow: hidden;
+}

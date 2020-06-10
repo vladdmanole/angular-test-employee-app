@@ -1,0 +1,16 @@
+.company-container {
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.24);
+  width: 85vw;
+  margin: 0 auto;
+  padding: 15px;
+  max-width: 700px;
+}
+
+.company-banner {
+  background: #f3f6f3;
+  padding: 15px 25px;
+  line-height: 1.6;
+}
+.company-title, .company-description {
+  font-family: "Acrelec", Arial, sans-serif;
+}

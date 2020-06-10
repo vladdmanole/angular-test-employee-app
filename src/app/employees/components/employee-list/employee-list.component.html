@@ -1,0 +1,34 @@
+<h1><strong>Employees List</strong></h1>
+<div class="search-bar">
+  <input
+    type="text"
+    class="form-control full-width"
+    placeholder="Search"
+    [(ngModel)]="employeeSearchField"
+  />
+</div>
+<ng-container
+  *ngIf="employeeService.employees$ | async as employees; else loading"
+>
+  <app-employee-list-item
+    *ngFor="
+      let employee of employees | employeeSearchFilter: employeeSearchField | sortAlphabetical: 'FirstName'
+    "
+    [employee]="employee"
+    [openDeleteDialogFn]="openDeleteDialog"
+    [closeDeleteDialogFn]="closeDeleteDialog"
+    [deleteDialogId]="employeeDeleteModalId"
+  ></app-employee-list-item>
+</ng-container>
+
+<ng-template #loading>
+  Loading employees...
+</ng-template>
+
+<app-dialog-confirm id="{{employeeDeleteModalId}}">
+  <h1>Delete Employee?</h1>
+  <div class="d-flex justify-content-end button-margin">
+    <button type="button" class="btn btn-delete" (click)="closeDeleteDialog(true);">Delete</button>
+    <button type="button" class="btn btn-info" (click)="closeDeleteDialog();">Close</button>
+  </div>
+</app-dialog-confirm>

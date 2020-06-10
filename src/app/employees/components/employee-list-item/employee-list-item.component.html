@@ -1,0 +1,21 @@
+<div
+  class="employee-container d-flex justify-content-space-between align-items-center"
+>
+  <div class="employee-picture-container">
+    <img height="75" width="75" src="assets/images/user.png" class="employee-picture" />
+  </div>
+  <div class="employee-text-container d-flex flex-column full-width">
+    <span>
+      <strong>{{ employeeFullName }}</strong>
+    </span>
+    <span>{{ employee.Position }}</span>
+  </div>
+  <div class="d-flex justify-content-end button-margin">
+    <button type="button" class="btn btn-delete" (click)="openDeleteDialogFn(deleteDialogId, employee.Id)">
+      <img height="15" width="15" src="assets/images/delete-user.png" />
+    </button>
+    <button type="button" class="btn btn-edit" [routerLink]="['/employee-edit', employee.Id]"  [disabled]="employee.Blocked">
+      <img height="15" width="15" src="assets/images/edit-user.png" />
+    </button>
+  </div>
+</div>

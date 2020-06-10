@@ -1,0 +1,24 @@
+<h1><strong>Employees List</strong></h1>
+<hr />
+<div class="employee-container">
+  <ng-container
+    class="employee-details"
+    *ngIf="employee$ | async as employee; else loading;"
+  >
+    <h2>{{ employee.FirstName + " " + employee.SecondName }}</h2>
+    <div [innerHTML]="employee.Details"></div>
+    <div class="employee-position-container field-margin">
+      <input
+        type="text"
+        class="form-control full-width"
+        placeholder="Employee Position"
+        [(ngModel)]="employee.Position"
+      />
+    </div>
+    <div class="d-flex justify-content-end field-margin button-margin">
+      <button type="button" class="btn btn-info" (click)="onCancel()">Cancel</button>
+      <button type="button" class="btn btn-success" [disabled]="isSaveDisabled(employee)" (click)="onSave()">Save</button>
+    </div>
+  </ng-container>
+  <ng-template #loading>Loading Employee...</ng-template>
+</div>
